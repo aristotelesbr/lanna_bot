@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>CONTE DE <set>number</set> ATE <set>number</set></pattern>
+        <template>
+            <think><set name="init"><star/></set></think>
+            <star />
+            <condition name="init">
+                <li><value><star index="2"/></value></li>
+                <li>
+                    <set name="init">
+                        <map><name>successor</name> <get name="init"/></map>
+                    </set>
+                    <loop/>
+                </li>
+            </condition>
+        </template>
+    </category>
+</aiml>

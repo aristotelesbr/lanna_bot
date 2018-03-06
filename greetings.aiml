@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>OI ^</pattern>
+        <template>
+            Olá, como você chama?
+            <learn>
+                <category>
+                    <pattern>MEU NOME É *</pattern>
+                    <template>
+                        Fala aí <set name="name"><formal><star /></formal></set>, como posso te ajudar?
+                    </template>
+                </category>
+                <category>
+                    <pattern>*</pattern>
+                        <template>
+                            Fala aí <set name="name"><formal><star /></formal></set>, como posso te ajudar?
+                        </template>
+                </category>
+                <category>
+                    <pattern>COMO É MEU NOME ^</pattern>
+                    <template>
+                        <random>
+                            <li><formal><get name="name" /></formal>!</li>
+                            <li>Seu nome é: <formal><get name="name" /></formal></li>
+                            <li>Tá esquecido hein <formal><get name="name" /></formal></li>
+                        </random>
+                    </template>
+                </category>
+            </learn>
+        </template>
+    </category>
+</aiml>
